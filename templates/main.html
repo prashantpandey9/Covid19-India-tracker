@@ -1,50 +1,59 @@
 {%extends 'base.html'%}
 {% load static %}
 {% block content%}
-
-<div class="container">
-
-  <h1 style="position: relative;text-align: center;">India Covid Dashboard</h1>
-  
-        <div id="table-wrapper">
-            <div id="table-scroll">
-                <table class="table table-hover table-warning">
-                    <thead>
-                    <tr style="text-align:center">
-                        <th scope="col">State</th>
-                        <th scope="col">Statecode</th>
-                        <th scope="col" style="background-color:rgba(68,155,226,.3)">Active Cases</th>
-                        <th scope="col" style="background-color:rgba(40,167,69,.3)"> Total Confirmed</th>
-                        <th scope="col" style="background-color:rgba(255,7,58,.12549)"> Total Deaths </th>
-                        <th scope="col">Last Updated Time</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-
-                    
-                        {% for dt in data.statewise %}
-                    <tr style="text-align:center">
-                        <td> {{dt.state}}</td>
-                        <td> {{dt.statecode}}</td>
-                        <td class='activ'> {{dt.active}} <span class="t-green">[-{{dt.deltarecovered}}]<span></td>
-
-                        <td  class="t-green b-green"> {{dt.confirmed}} <span class='t-red'> [+{{dt.deltaconfirmed}}]</span></td>
-
-                        <td class='t-red b-red'> {{dt.deaths}} <span >[+{{dt.deltadeaths}}]</span></td>
-                    
-                        <td> {{dt.lastupdatedtime}}</td>
-                    </tr>
-
-                    
-                    
-
-                    {%endfor%}
-
-                    </tbody>
-                </table>
+<h1>🇮🇳 Covid19 India Dashboard</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class=col-sm-4>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Global</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
             </div>
         </div>
-    
+
+        <div class=col-sm-8>
+            <div id="table-wrapper">
+                <div id="table-scroll">
+                    <table class="table table-hover table-primary">
+                        <thead>
+                        <tr style="text-align:center">
+                            <th scope="col">State</th>
+                            <th scope="col">Statecode</th>
+                            <th scope="col" style="background-color:rgba(68,155,226,.3)">Active Cases</th>
+                            <th scope="col" style="background-color:rgba(40,167,69,.3)"> Total Confirmed</th>
+                            <th scope="col" style="background-color:rgba(255,7,58,.12549)"> Total Deaths </th>
+                            <th scope="col">Last Updated Time</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        
+                            {% for dt in data.statewise %}
+                        <tr style="text-align:center">
+                            <td> {{dt.state}}</td>
+                            <td> {{dt.statecode}}</td>
+                            <td class='activ'> {{dt.active}} <span class="t-green">[-{{dt.deltarecovered}}]<span></td>
+
+                            <td  class="t-green b-green"> {{dt.confirmed}} <span class='t-red'> [+{{dt.deltaconfirmed}}]</span></td>
+
+                            <td class='t-red b-red'> {{dt.deaths}} <span >[+{{dt.deltadeaths}}]</span></td>
+                        
+                            <td> {{dt.lastupdatedtime}}</td>
+                        </tr>
+                        {%endfor%}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </div>
 </div>
 
 {% endblock%} 

@@ -1,3 +1,15 @@
+.h1{
+    position: relative;
+    text-align: center;
+}
+.col-sm-4{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    top:-20px;
+    z-index:2;
+}
 #table-wrapper {
     position:relative;
   }
@@ -33,4 +45,22 @@
   }
   .b-red{
     background-color:rgba(255,7,58,.12549);
+  }
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #e95d5d;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
   }
