@@ -1,0 +1,36 @@
+#table-wrapper {
+    position:relative;
+  }
+  #table-scroll {
+    height:500px;
+    overflow:auto;  
+    margin-top:20px;
+  }
+  #table-wrapper table {
+    width:100%;
+  
+  }
+  #table-wrapper table thead th .text {
+    position:absolute;   
+    top:-20px;
+    z-index:2;
+    height:20px;
+    width:35%;
+    border:1px solid red;
+  }
+  .activ{
+    background-color:rgba(68,155,226,.3);
+    color:#002c57;
+  }
+  .t-green{
+      color: #005c25;
+  }
+  .b-green{
+    background-color:rgba(40,167,69,.3);
+  }
+  .t-red{
+      color: #5a0401;
+  }
+  .b-red{
+    background-color:rgba(255,7,58,.12549);
+  }

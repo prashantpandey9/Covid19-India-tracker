@@ -1,33 +1,6 @@
 {%extends 'base.html'%}
-
+{% load static %}
 {% block content%}
-<style>
-#table-wrapper {
-  position:relative;
-}
-#table-scroll {
-  height:500px;
-  overflow:auto;  
-  margin-top:20px;
-}
-#table-wrapper table {
-  width:100%;
-
-}
-#table-wrapper table * {
-
-  color:black;
-}
-#table-wrapper table thead th .text {
-  position:absolute;   
-  top:-20px;
-  z-index:2;
-  height:20px;
-  width:35%;
-  border:1px solid red;
-}
-
-</style>
 
 <div class="container">
 
@@ -53,9 +26,11 @@
                     <tr style="text-align:center">
                         <td> {{dt.state}}</td>
                         <td> {{dt.statecode}}</td>
-                        <td style="background-color:rgba(68,155,226,.3); color:#002c57"> {{dt.active}} <span style="color:green">[-{{dt.deltarecovered}}]<span></td>
-                        <td style="color: #005c25;background-color:rgba(40,167,69,.3)"> {{dt.confirmed}} <span style="color:red"> [+{{dt.deltaconfirmed}}]</span></td>
-                        <td style="color:#5a0401;background-color:rgba(255,7,58,.12549)"> {{dt.deaths}} <span style="color:red">[+{{dt.deltadeaths}}]</span></td>
+                        <td class='activ'> {{dt.active}} <span class="t-green">[-{{dt.deltarecovered}}]<span></td>
+
+                        <td  class="t-green b-green"> {{dt.confirmed}} <span class='t-red'> [+{{dt.deltaconfirmed}}]</span></td>
+
+                        <td class='t-red b-red'> {{dt.deaths}} <span >[+{{dt.deltadeaths}}]</span></td>
                     
                         <td> {{dt.lastupdatedtime}}</td>
                     </tr>
