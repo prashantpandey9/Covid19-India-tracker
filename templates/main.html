@@ -1,0 +1,75 @@
+{%extends 'base.html'%}
+
+{% block content%}
+<style>
+#table-wrapper {
+  position:relative;
+}
+#table-scroll {
+  height:500px;
+  overflow:auto;  
+  margin-top:20px;
+}
+#table-wrapper table {
+  width:100%;
+
+}
+#table-wrapper table * {
+
+  color:black;
+}
+#table-wrapper table thead th .text {
+  position:absolute;   
+  top:-20px;
+  z-index:2;
+  height:20px;
+  width:35%;
+  border:1px solid red;
+}
+
+</style>
+
+<div class="container">
+
+  <h1 style="position: relative;text-align: center;">India Covid Dashboard</h1>
+  
+        <div id="table-wrapper">
+            <div id="table-scroll">
+                <table class="table table-hover table-warning">
+                    <thead>
+                    <tr style="text-align:center">
+                        <th scope="col">State</th>
+                        <th scope="col">Statecode</th>
+                        <th scope="col" style="background-color:rgba(68,155,226,.3)">Active Cases</th>
+                        <th scope="col" style="background-color:rgba(40,167,69,.3)"> Total Confirmed</th>
+                        <th scope="col" style="background-color:rgba(255,7,58,.12549)"> Total Deaths </th>
+                        <th scope="col">Last Updated Time</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    
+                        {% for dt in data.statewise %}
+                    <tr style="text-align:center">
+                        <td> {{dt.state}}</td>
+                        <td> {{dt.statecode}}</td>
+                        <td style="background-color:rgba(68,155,226,.3); color:#002c57"> {{dt.active}} <span style="color:green">[-{{dt.deltarecovered}}]<span></td>
+                        <td style="color: #005c25;background-color:rgba(40,167,69,.3)"> {{dt.confirmed}} <span style="color:red"> [+{{dt.deltaconfirmed}}]</span></td>
+                        <td style="color:#5a0401;background-color:rgba(255,7,58,.12549)"> {{dt.deaths}} <span style="color:red">[+{{dt.deltadeaths}}]</span></td>
+                    
+                        <td> {{dt.lastupdatedtime}}</td>
+                    </tr>
+
+                    
+                    
+
+                    {%endfor%}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    
+</div>
+
+{% endblock%} 

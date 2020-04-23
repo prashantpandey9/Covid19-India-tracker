@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+
+{%block content %}
+	<!-- Jumbo Heading for Topic Started -->
+	<div class="jumbotron jumbotron-fluid height100p banner" id="home">
+	  <div class="container h100">
+	    <div class="contentBox h100" data-aos="fade-up">
+	    	<p>
+	    		Institute of Electrical and Electronics Engineers
+	    	</p>	    	
+	    	<h1>IEEE BTKIT DWARAHAT</h1>
+ 	    </div>
+	  </div>
+	</div>
+	<!-- Jumbo Heading for Topic Ended-->
+	{%include 'society.html'%}
+
+	{%include 'about.html'%}
+
+	{% include 'members.html'%}
+
+	{%include 'events.html'%}
+
+	{%include 'x.html'%}
+	
+{%endblock content %}
