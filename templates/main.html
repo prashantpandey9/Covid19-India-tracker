@@ -1,22 +1,144 @@
 {%extends 'base.html'%}
 {% load static %}
 {% block content%}
-<h1>🇮🇳 Covid19 India Dashboard</h1>
+<style>
+.menu ul {
+   list-style-type: none;
+    margin-top: -30px;
+    padding: 0px;
+    float:left;
+    color:#fff;
+}
+.menu ul li{
+    margin:40px;
+}
+.menu ul li a{
+    text-decoration:none;
+    color:#fff;
+    font-weight:400;
+    font-size: 1.3rem;
+}
+.menu ul li a:hover{
+    color:pink;
+}
+.box{
+    text-align:center;
+    font-size: 2.5rem;
+    background-color: #fff;
+    box-shadow: 2px -1px 12px 0px rgba(0,0,0,0.75);
+    font-weight:bold;
+    padding:10px;
+}
+.data{
+    font-size: 1.5rem;
+}
+.container-fluid{
+    margin-top:50px;
+}
+</style>
 <div class="container-fluid">
     <div class="row">
-        <div class=col-sm-4>
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Global</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
+        <div class=col-sm-2>
+            <nav class="menu">              
+                <ul>
+                    <li>
+                    <h3>🇮🇳 Covid19 <span>India</span></h3>
+                    </li>
+                    <li>
+                    <a href="#0">
+                       
+                        <i></i>
+                        
+                        <i class="fa fa-globe"></i>
+                        <span>GLOBAL</span>
+                    </a>
+                    </li>
+                    <li>
+                    <a href="#1">
+                        
+                            <i class="fa fa-industry"></i>
+                        </svg>
+                        <span>NATION</span>
+                        </a>
+                    </li>
+                    <li>
+                    <a href="#0">
+                        
+                        <i class="fa fa-question-circle"></i>
+                        </svg>
+                        <span>FAQs</span>
+                    </a>
+                    </li>
+                    <li>
+                    <a href="#0">
+                        
+                        <i class="fa fa-user"></i>
+                        
+                        <span>About Us</span>
+                    </a>
+                    </li>
+                    <li>
+                    <a href="#0">
+                        
+                        <i class="fa fa-phone"></i>
+                        
+                        <span>Contact</span>
+                    </a>
+                    </li>
+                    <li>
+                    <a href="#0">
+                        
+                        <i class="fa fa-bar-chart"></i>
+                        
+                        <span>Charts</span>
+                    </a>
+                    </li>
+                    <li>
+                </ul>
+            </nav>
         </div>
 
-        <div class=col-sm-8>
+        <div class="col-sm-10">
+            <div class="col-sm-12 box">
+                <div class="row">
+                
+                    <div class="col-sm-6 " style="border-right: 1px solid grey;">
+                        <div class="col-sm-12">🇮🇳 India</div>
+                        <div class="row data">
+                            {% for dt in data.statewise %}
+                           
+                            {% ifequal dt.state "Total" %}
+                                <div class="col-sm-3 t-red"> {{dt.confirmed}} <span class='t-red'> [+{{dt.deltaconfirmed}}]</span></div>
+                                <div class="col-sm-3 t-green"> {{dt.recovered}}  <span class="t-green">[-{{dt.deltarecovered}}]<span></div>
+                                <div class="col-sm-3" style="color:#002c57;"> {{dt.active}}</div>
+                                <div class="col-sm-3 t-red"> {{dt.deaths}} <span >[+{{dt.deltadeaths}}]</span></div>
+                            {% endifequal %}
+                            {%endfor%}
+                        </div>
+                        <div class="row data">
+                            <div class="col-sm-3"> Confirmed</div>
+                            <div class="col-sm-3"> Recovered</div>
+                            <div class="col-sm-3"> Active</div>
+                            <div class="col-sm-3"> Deaths</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="col-sm-12 banner">Global</div>
+                        <div class="row data">
+                            <div class="col-sm-3"> India</div>
+                            <div class="col-sm-3"> India</div>
+                            <div class="col-sm-3"> India</div>
+                            <div class="col-sm-3"> India</div>
+                        </div>
+                        <div class="row data">
+                            <div class="col-sm-3"> Confirmed</div>
+                            <div class="col-sm-3"> Recovered</div>
+                            <div class="col-sm-3"> Active</div>
+                            <div class="col-sm-3"> Deaths</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div id="table-wrapper">
                 <div id="table-scroll">
                     <table class="table table-hover table-primary">
@@ -24,9 +146,10 @@
                         <tr style="text-align:center">
                             <th scope="col">State</th>
                             <th scope="col">Statecode</th>
-                            <th scope="col" style="background-color:rgba(68,155,226,.3)">Active Cases</th>
-                            <th scope="col" style="background-color:rgba(40,167,69,.3)"> Total Confirmed</th>
-                            <th scope="col" style="background-color:rgba(255,7,58,.12549)"> Total Deaths </th>
+                            <th scope="col" class="b-green t-green"> Total Confirmed</th>
+                            <th scope="col" class="activ">Active Cases</th>
+                            <th scope="col" class="activ"> Total Recovered</th>
+                            <th scope="col" class="b-red t-red"> Total Deaths </th>
                             <th scope="col">Last Updated Time</th>
                         </tr>
                         </thead>
@@ -37,9 +160,10 @@
                         <tr style="text-align:center">
                             <td> {{dt.state}}</td>
                             <td> {{dt.statecode}}</td>
-                            <td class='activ'> {{dt.active}} <span class="t-green">[-{{dt.deltarecovered}}]<span></td>
-
                             <td  class="t-green b-green"> {{dt.confirmed}} <span class='t-red'> [+{{dt.deltaconfirmed}}]</span></td>
+                            <td class='activ'> {{dt.active}}</td>
+                            
+                            <td class='activ'> {{dt.recovered}} <span class="t-green">[-{{dt.deltarecovered}}]<span></td>
 
                             <td class='t-red b-red'> {{dt.deaths}} <span >[+{{dt.deltadeaths}}]</span></td>
                         
