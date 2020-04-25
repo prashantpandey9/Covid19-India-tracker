@@ -1,4 +1,4 @@
-# Covid19-India-tracker
+# Covid19-India-Site
 * [Visit the Tracker](http://covidindiaa.pythonanywhere.com/)
 
 # Api used
