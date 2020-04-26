@@ -108,34 +108,33 @@
                             {% for dt in data.statewise %}
                            
                             {% ifequal dt.state "Total" %}
-                                <div class="col-sm-3 t-red"> {{dt.confirmed}} <span class='t-red'> [+{{dt.deltaconfirmed}}]</span></div>
-                                <div class="col-sm-3 t-green"> {{dt.recovered}}  <span class="t-green">[-{{dt.deltarecovered}}]<span></div>
-                                <div class="col-sm-3" style="color:#002c57;"> {{dt.active}}</div>
-                                <div class="col-sm-3 t-red"> {{dt.deaths}} <span >[+{{dt.deltadeaths}}]</span></div>
+                                <div class="col-sm-3 t-red"> {{dt.confirmed}} <span class='t-red'> [+{{dt.deltaconfirmed}}]</span>
+                                <p>Confirmed</p>  </div>
+                                <div class="col-sm-3 t-green"> {{dt.recovered}}  <span class="t-green">[-{{dt.deltarecovered}}]<span>
+                                <p>Recovered</p></div>
+                                <div class="col-sm-3" style="color:#002c57;"> {{dt.active}}
+                                <p>Active</p></div>
+                                <div class="col-sm-3 t-red"> {{dt.deaths}} <span >[+{{dt.deltadeaths}}]</span>
+                                <p>Deaths</p></div>
                             {% endifequal %}
                             {%endfor%}
                         </div>
-                        <div class="row data">
-                            <div class="col-sm-3"> Confirmed</div>
-                            <div class="col-sm-3"> Recovered</div>
-                            <div class="col-sm-3"> Active</div>
-                            <div class="col-sm-3"> Deaths</div>
-                        </div>
+                       
                     </div>
                     <div class="col-sm-6">
                         <div class="col-sm-12 banner">Global</div>
                         <div class="row data">
-                            <div class="col-sm-3"> India</div>
-                            <div class="col-sm-3"> India</div>
-                            <div class="col-sm-3"> India</div>
-                            <div class="col-sm-3"> India</div>
+                            <div class="col-sm-3 t-red">{{data2.cases}}<span>   [+{{data2.todayCases}}]</span>
+                            <p>Confirmed</p>                           
+                            </div>
+                            <div class="col-sm-3 t-green">{{data2.recovered}}
+                            <p>Recovered</p></div>
+                            <div class="col-sm-3 activ-t">{{data2.active}}
+                            <p>Active</p></div>
+                            <div class="col-sm-3 t-red">{{data2.deaths}}<span>   [+{{data2.todayDeaths}}]</span>
+                            <p>Deaths</p></div>
                         </div>
-                        <div class="row data">
-                            <div class="col-sm-3"> Confirmed</div>
-                            <div class="col-sm-3"> Recovered</div>
-                            <div class="col-sm-3"> Active</div>
-                            <div class="col-sm-3"> Deaths</div>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
