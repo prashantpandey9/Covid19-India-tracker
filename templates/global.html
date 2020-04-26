@@ -10,7 +10,22 @@
         <div class="col-sm-10">
             <div class="col-sm-12 box">
                 <div class="row">
-                    <div class="col-sm-12 " style="border-right: 1px solid grey;">
+                    <div class="col-sm-6" style="border-right: 1px solid grey;">
+                        <div class="col-sm-12 banner">Global</div>
+                        <div class="row data">
+                            <div class="col-sm-3 t-red">{{data2.cases}}<span>   [+{{data2.todayCases}}]</span>
+                            <p>Confirmed</p>                           
+                            </div>
+                            <div class="col-sm-3 t-green">{{data2.recovered}}
+                            <p>Recovered</p></div>
+                            <div class="col-sm-3 activ-t">{{data2.active}}
+                            <p>Active</p></div>
+                            <div class="col-sm-3 t-red">{{data2.deaths}}<span>   [+{{data2.todayDeaths}}]</span>
+                            <p>Deaths</p></div>
+                        </div>
+                       
+                    </div>
+                    <div class="col-sm-6 " >
                         <div class="col-sm-12" id="india">🇮🇳 India</div>
                         <div class="row data">
                             {% for dt in data.statewise %}
@@ -32,14 +47,14 @@
                     
                 </div>
             </div>
-            <h1 style="background:#fff;margin-bottom:0;font-weight:bold;"> <center>State Data</center></h1>
+            <h1 style="background:#fff;margin-bottom:0;font-weight:bold;"> <center>Country Data</center></h1>
             <div id="table-wrapper">
                 <div id="table-scroll">
-                    <table class="table table-hover table-primary" id="india">
+                    <table class="table table-hover table-fixed table-primary " id="india">
                         <thead>
                         <tr style="text-align:center">
-                            <th scope="col">State</th>
-                            
+                            <th scope="col">Flag</th>
+                            <th scope="col">Country</th>
                             <th scope="col" class="b-green t-green"> Total Confirmed</th>
                             <th scope="col" class="activ">Active Cases</th>
                             <th scope="col" class="activ"> Total Recovered</th>
@@ -50,17 +65,18 @@
                         <tbody>
 
                         
-                            {% for dt in data.statewise %}
+                            {% for dt in data1 %}
                         <tr style="text-align:center">
-                            <td> {{dt.state}}</td>
-                            
-                            <td  class="t-green b-green"> {{dt.confirmed}} <span class='t-red'> [+{{dt.deltaconfirmed}}]</span></td>
+                            <td><img src="{{dt.countryInfo.flag}}" style='width:50px;'></td>
+                            <td> {{dt.country}}</td>
+                            <td  class="t-green b-green"> {{dt.cases}} <span class='t-red'> [+{{dt.todayCases}}]</span></td>
                             <td class='activ'> {{dt.active}}</td>
                             
-                            <td class='activ'> {{dt.recovered}} <span class="t-green">[-{{dt.deltarecovered}}]<span></td>
+                            <td class='activ'> {{dt.recovered}} </td>
 
-                            <td class='t-red b-red'> {{dt.deaths}} <span >[+{{dt.deltadeaths}}]</span></td>
+                            <td class='t-red b-red'> {{dt.deaths}} <span >[+{{dt.todayDeaths}}]</span></td>
                         
+                            <td> {{dt.lastupdatedtime}}</td>
                         </tr>
                         {%endfor%}
 

@@ -16,6 +16,15 @@ def apiforworld():
     s=(requests.get(api)).text
     data=json.loads(s)
     return data
+
+def country():
+    api="https://corona.lmao.ninja/v2/countries#"
+
+    s=(requests.get(api)).text
+
+    data=json.loads(s)
+    return data
+    
 # Create your views here.
 def Track(request):
     parms={
@@ -23,3 +32,11 @@ def Track(request):
         "data2":apiforworld(),
     }
     return render(request, 'main.html', parms)
+
+def globalD(request):
+    parms={
+        "data1":country(),
+        "data":apiforindia(),
+        "data2":apiforworld(),
+    }
+    return render(request, 'global.html', parms)

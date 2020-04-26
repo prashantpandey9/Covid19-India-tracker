@@ -14,8 +14,9 @@
     {%include 'css.html'%}
 
   </head>
-  <body style="background-color: #000;">
+  <body style="background-color: #000;"  data-spy="scroll" data-target=".menu" data-offset="10">
   {% block content %}
+  
   {% endblock content %}
 
 	{%include 'footer.html'%}

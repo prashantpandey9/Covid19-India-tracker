@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 *{
-  margin: 0;
-  padding: 0;
+  outline: none !important;
+  scroll-behavior: smooth;
 }
 body{
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Poppins',sans-serif;
 }
 .box{
   font-size: 40%;
@@ -42,13 +43,18 @@ body{
     width:35%;
     border:1px solid red;
   }
+  .table-fixed tbody {
+    height: 300px;
+    overflow-y: auto;
+    width: 100%;
+}
   .activ{
     background-color:rgba(68,155,226,.3);
     color:#002c57;
   }
   .activ-t{
     color:#002c57;
-  }
+  }s
   .t-green{
       color: #005c25;
   }
@@ -79,6 +85,43 @@ body{
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
+  .menu ul {
+    list-style-type: none;
+     margin-top: -30px;
+     padding: 0px;
+     float:left;
+     color:#fff;
+ }
+ .menu ul li{
+     margin:40px;
+ }
+ .menu ul li a{
+     text-decoration:none;
+     color:#fff;
+     font-weight:400;
+     font-size: 1.3rem;
+ }
+ .menu ul li a:hover{
+    color: pink;
+ }
+ .menu ul li a:active{
+  color: #000;
+  background: #fff;
+ }
+ .box{
+     text-align:center;
+     font-size: 2.5rem;
+     background-color: #fff;
+     box-shadow: 2px -1px 12px 0px rgba(0,0,0,0.75);
+     font-weight:bold;
+     padding:10px;
+ }
+ .data{
+     font-size: 1.5rem;
+ }
+ .container-fluid{
+     margin-top:50px;
+ }
 
 
   
