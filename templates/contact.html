@@ -1,0 +1,80 @@
+{%load static%}
+<style>
+@media(max-width:425px)
+{
+
+.contact .col-sm-6 p {
+  margin-left: 12px;
+  font-size: .8rem;
+}
+}
+@media(max-width:768px){
+	.contact .col-sm-6 p {
+		margin-left: 12px;
+		font-size: 1rem;
+	}
+}
+</style>
+<!-- Contact Section Started -->
+	<section class="contact" id="contact">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12" >
+					<h1> <center>CONTACT US</center> </h1>
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6" >	
+					
+					<p>
+						<span class="fa fa-envelope"></span>
+ 							Email: prashantpandey94551@gmail.com
+							 rajattiwari785@gmail.com
+						
+					</p>
+					<p>
+						<span class="fa fa-globe"></span>
+ 							Website: www.covidindiaa.pythonanywhere.com
+						
+					</p>
+					<p>
+						<span class="fa fa-phone"></span>
+ 							 Phone: +91-8057152295,+91-8273004988
+								
+					</p>
+					
+				</div>
+				<div class="col-sm-6">
+					
+					<form class="form-horizontal" method="POST">
+						{% csrf_token %}
+						<div class="form-group">
+							<label class="sr-only" for="email" name="mail" placeholder="user_name@mail.com" >Email address:</label>
+							<input type="email" class="form-control" id="email">
+						</div>
+						<div class="form-group">
+							<label class="sr-only" for="pwd" name="name" placeholder="your_name">Name:</label>
+							<input type="text" class="form-control" id="pwd">
+						</div>
+						<div class="form-group">
+							<label class="sr-only" for="pwd" placeholder="Type something here....."> Message:</label>
+							<textarea type="text" name="message" class="form-control" id="pwd"></textarea>
+						</div>
+						<div> 
+						<button type="submit" onclick="thank()" class="btn btn-primary">Submit</button>
+						</div>
+					</form>
+					</div>				
+				</div>
+			</div>
+		</div>		
+	</section>
+	<script>
+		function thank(){
+			alert("Thanks For Your Feedback!!!");
+		
+
+}
+	</script>
+	<!-- Contact Section Ended -->

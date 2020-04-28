@@ -6,20 +6,37 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="title" content="Coronavirus Outbreak in Global: Latest Case Count">
     <title>COVID19 India</title>
-
+    <meta name="description" content="A volunteer-driven crowdsourced effort to track the coronavirus in India and Globally. A detailed case count shows the extent of the coronavirus outbreak, with tables of the number of cases by state and country">
     <!-- Favicon icon -->
-    <link href="{%static 'media/images/coro.jpg'%}" rel="shortcut icon" type="">
-
+    <link href="{%static 'media/images/coro.jpg'%}" rel="shortcut icon">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://covidindiaa.pythonanywhere.com/">
+    <meta property="og:title" content="Coronavirus in India and Global: Latest Case Count">
+    <meta property="og:description" content="A volunteer-driven crowdsourced effort to track the coronavirus in India and Globally. A detailed case count shows the extent of the coronavirus outbreak, with tables of the number of cases by state and country">
+    <meta property="og:image" content="https://covidindiaa.pythonanywhere.com/coro/">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="http://covidindiaa.pythonanywhere.com/">
+    <meta property="twitter:title" content="Coronavirus in India and global: LatestCase Count">
+    <meta name="twitter:site" value="@covid19indiaorg">
+    <meta property="twitter:description" content="A volunteer-driven crowdsourced effort to track the coronavirus in India and Globally. A detailed case count shows the extent of the coronavirus outbreak, with tables of the number of cases by state and country">
+    <meta property="twitter:image" content="https://covidindiaa.pythonanywhere.com/coro/">
     {%include 'css.html'%}
 
   </head>
   <body style="background-color: #000;"  data-spy="scroll" data-target=".menu" data-offset="10">
   {% block content %}
-  
+
   {% endblock content %}
 
-	{%include 'footer.html'%}
+  {% include 'contact.html' %}
+	
+  {%include 'footer.html'%}
 
 	{%include 'js.html'%}
   </body>

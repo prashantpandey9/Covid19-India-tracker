@@ -54,7 +54,7 @@ body{
   }
   .activ-t{
     color:#002c57;
-  }s
+  }
   .t-green{
       color: #005c25;
   }
@@ -124,4 +124,28 @@ body{
  }
 
 
-  
+.contact .col-sm-12,.contact .col-sm-6{
+  position: relative;
+  margin-top:30px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+}
+
+@media(max-width:425px)
+{
+
+.menu ul li{
+  font-size: .8rem;
+}
+}
+@media(max-width:768px){
+	.menu ul li a{
+    text-decoration:none;
+    color:#fff;
+    font-weight:400;
+    font-size: 1rem;
+}
+}
