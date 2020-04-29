@@ -50,16 +50,16 @@
 					<form class="form-horizontal" method="POST">
 						{% csrf_token %}
 						<div class="form-group">
-							<label class="sr-only" for="email" name="mail" placeholder="user_name@mail.com" >Email address:</label>
-							<input type="email" class="form-control" id="email">
+							<label class="sr-only" for="email"   >Email address:</label>
+							<input name="mail" type="email" class="form-control" id="email" placeholder="user_name@mail.com">
 						</div>
 						<div class="form-group">
-							<label class="sr-only" for="pwd" name="name" placeholder="your_name">Name:</label>
-							<input type="text" class="form-control" id="pwd">
+							<label class="sr-only" for="pwd" >Name:</label>
+							<input name="name" type="text" class="form-control" id="pwd"  placeholder="your_name">
 						</div>
 						<div class="form-group">
-							<label class="sr-only" for="pwd" placeholder="Type something here....."> Message:</label>
-							<textarea type="text" name="message" class="form-control" id="pwd"></textarea>
+							<label class="sr-only" for="pwd" > Message:</label>
+							<textarea type="text" name="message" class="form-control" id="pwd" placeholder="Type something here....."></textarea>
 						</div>
 						<div> 
 						<button type="submit" onclick="thank()" class="btn btn-primary">Submit</button>

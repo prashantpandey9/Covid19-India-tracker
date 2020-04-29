@@ -1,19 +1,22 @@
 from django.shortcuts import render
 import requests
 import json
-from django.core.mail import send_mail
-from django.conf import settings
-def index(request):
-    if request.method=="POST":
-        message=request.POST["message"]
-        send_mail(
-            name,
-            message+" feedback from "+ mail,
-            settings.EMAIL_HOST_USER,
-            ["prashantpandey94551@gmail.com","radhasati2019@gmail.com","rajattiwari785@gmail.com"],
-            fail_silently="False")
-    return render(request,"contact.html")
-
+from django.shortcuts import redirect
+from .forms import ContactForm
+# def feed(request):
+#    if request.method == "POST":
+#       cc = ContactForm(request.POST)
+#       if cc.is_valid():
+#           name = cc.cleaned_data['name']
+#           mail=cc.cleaned_data['mail']
+#           message=cc.cleaned_data['message']
+#           cc.save()
+#           return redirect('track') 
+      
+#    else:
+#       cc = ContactForm(request.POST)
+		
+#    return render(request, 'contact.html',{"f":cc})
 
 def apiforindia():
     api="https://api.covid19india.org/data.json"
@@ -40,21 +43,41 @@ def country():
     
 # Create your views here.
 def Track(request):
+    if request.method == "POST":
+      cc = ContactForm(request.POST)
+      if cc.is_valid():
+          name = cc.cleaned_data['name']
+          mail=cc.cleaned_data['mail']
+          message=cc.cleaned_data['message']
+          cc.save()
+          return redirect('track') 
+      
+    else:
+      cc = ContactForm(request.POST)
     parms={
         "data":apiforindia(),
         "data2":apiforworld(),
+        'f':cc
     }
     return render(request, 'main.html', parms)
 
 def globalD(request):
+    if request.method == "POST":
+      cc = ContactForm(request.POST)
+      if cc.is_valid():
+          name = cc.cleaned_data['name']
+          mail=cc.cleaned_data['mail']
+          message=cc.cleaned_data['message']
+          cc.save()
+          return redirect('tracks') 
+      
+    else:
+      cc = ContactForm(request.POST)
     parms={
         "data1":country(),
         "data":apiforindia(),
         "data2":apiforworld(),
+        'f':cc
     }
     return render(request, 'global.html', parms)
 
-def image(request):
-    parms={
-    }
-    return render(request, 'coro.html', parms)
