@@ -7,6 +7,7 @@
 * [Global-Country-data](https://corona.lmao.ninja/v2/countries#)
 ##
 ![](https://github.com/prashantpandey9/Covid19-India-tracker/blob/master/tr3.png)
-![](https://github.com/prashantpandey9/Covid19-India-tracker/blob/master/tr2.png)
 ![](https://github.com/prashantpandey9/Covid19-India-tracker/blob/master/tr4.png)
+![](https://github.com/prashantpandey9/Covid19-India-tracker/blob/master/tr2.png)
+
 
