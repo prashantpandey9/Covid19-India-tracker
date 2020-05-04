@@ -14,7 +14,7 @@
                         <div class="col-sm-12" id="india">🇮🇳 India</div>
                         <div class="row data">
                             {% for dt in data.statewise %}
-                           
+
                             {% ifequal dt.state "Total" %}
                                 <div class="col-sm-3 t-red"> {{dt.confirmed}} <span class='t-red'> [+{{dt.deltaconfirmed}}]</span>
                                 <p>Confirmed</p>  </div>
@@ -27,9 +27,9 @@
                             {% endifequal %}
                             {%endfor%}
                         </div>
-                       
+
                     </div>
-                    
+
                 </div>
             </div>
             <h1 style="background:#fff;margin-bottom:0;font-weight:bold;"> <center>State Data</center></h1>
@@ -39,28 +39,27 @@
                         <thead>
                         <tr style="text-align:center">
                             <th scope="col">State</th>
-                            
+
                             <th scope="col" class="b-green t-green"> Total Confirmed</th>
                             <th scope="col" class="activ">Active Cases</th>
                             <th scope="col" class="activ"> Total Recovered</th>
                             <th scope="col" class="b-red t-red"> Total Deaths </th>
-                            
+
                         </tr>
                         </thead>
                         <tbody>
 
-                        
                             {% for dt in data.statewise %}
                         <tr style="text-align:center">
                             <td> {{dt.state}}</td>
-                            
+
                             <td  class="t-green b-green"> {{dt.confirmed}} <span class='t-red'> [+{{dt.deltaconfirmed}}]</span></td>
                             <td class='activ'> {{dt.active}}</td>
-                            
+
                             <td class='activ'> {{dt.recovered}} <span class="t-green">[-{{dt.deltarecovered}}]<span></td>
 
                             <td class='t-red b-red'> {{dt.deaths}} <span >[+{{dt.deltadeaths}}]</span></td>
-                        
+
                         </tr>
                         {%endfor%}
 
@@ -68,9 +67,8 @@
                     </table>
                 </div>
             </div>
-            
-        </div>
+        </div>        
     </div>
 </div>
 
-{% endblock%} 
+{% endblock%}

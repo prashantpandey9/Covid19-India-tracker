@@ -33,11 +33,78 @@
   {% block content %}
 
   {% endblock content %}
-
+ <style>
+	 .box1{
+		text-align:center;
+		font-size: 1.5rem;
+		background-color: #b8dafd;
+		col
+		box-shadow: 2px -1px 12px 0px rgba(0,0,0,0.75);
+		font-weight:bold;
+		margin-top:10px;
+}
+ </style>
+  <div class="container-fluid">
+    <div class="row">
+		<div class="col-sm-12">
+			<h1 style="color: #fff;
+			text-align:center ;
+			margin: 0px 0px 20px 0px;">
+				SAFETY MEASURES
+			</h1>
+		</div>
+		<div class="col-sm-2">
+			
+		</div>
+        <div class="col-sm-5">
+            <img name="slide" class="img-fluid">
+            <script>
+                var i=0;
+                var time=5000;
+                var images=["{%static 'media/images/img1.jpeg'%}",
+                            "{%static 'media/images/img2.jpeg'%}",
+                            "{%static 'media/images/img3.jpeg'%}",
+                            "{%static 'media/images/img4.jpeg'%}",
+                            "{%static 'media/images/img5.jpeg'%}"]
+                function chang(){
+                    document.slide.src=images[i];
+                    if (i<images.length-1){
+                        i++;
+                    }
+                    else{
+                        i=0;
+                    }
+                    setTimeout("chang()",time);
+                }
+                        window.onload=chang();
+            </script>
+		</div>
+		
+		<div class="col-sm-5">
+			<div class="col-sm-12 box1">
+                <div class="row">
+                    <div class="col-sm-12 ">
+                        <div class="col-sm-12">Important Links </div>
+                        <div class="row data">
+                                <div class="col-sm-3 ">Link</div>
+                                <div class="col-sm-3 ">Link</div>
+                                <div class="col-sm-3">Link</div>
+                                <div class="col-sm-3">Link</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+    </div>
+  </div>
+  <!-- carousal starts here -->
+        
+        <!-- carousal ends here -->
   {% include 'contact.html' %}
 	
   {%include 'footer.html'%}
 
 	{%include 'js.html'%}
+  
   </body>
 </html>
