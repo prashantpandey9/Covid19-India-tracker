@@ -3,9 +3,9 @@ import requests
 import json
 from django.shortcuts import redirect
 from .forms import ContactForm
-# from bs4 import BeautifulSoup
-# from datetime import datetime
-# now = datetime.now()
+from bs4 import BeautifulSoup
+from datetime import datetime
+now = datetime.now()
 
 def apiforindia():
     api="https://api.covid19india.org/data.json"
@@ -30,27 +30,48 @@ def country():
     data=json.loads(s)
     return data
     
-# def news():
-#     url="https://news.google.com/topics/CAAqBwgKMMqAmAsw9KmvAw?hl=en-IN&gl=IN&ceid=IN%3Aen" #google news URL for scraping it.
-#     q=requests.get(url)
-#     soup=BeautifulSoup(q.text,"lxml")
-#     news_headline=soup.find_all('h3',class_="ipQwMb ekueJc gEATFF RD0gLb") # News Headline
-#     images = soup.findAll('img',class_="tvs3Id QwxBBf") #Image links related to News-headline
-#     link = soup.findAll('a',class_="VDXfz") # News-Headline deatail link  
-#     news_headline_list=[n.text for n in news_headline]
-#     image_link=[j['src'] for j in images]
-#     headline_link=["https://news.google.com/"+str(j['href']) for j in link]
-#     dic={}
-#     serial=1
-#     for j in range(20):
-#         dic[now.strftime("%d %b")+" "+str(serial)]={"Headline":news_headline_list[j],"image_link":image_link[j],"headline_link":headline_link[j]}
-#         serial+=1
-#     with open("google-news"+str(now.strftime(" %d%b"))+".json", 'w') as file:
-#         json.dump(dic, file)
+def news():
+    url="https://news.google.com/topics/CAAqBwgKMMqAmAsw9KmvAw?hl=en-IN&gl=IN&ceid=IN%3Aen" #google news URL for scraping it.
+    q=requests.get(url)
+    soup=BeautifulSoup(q.text,"html.parser")
+    news_headline=soup.find_all('h3',class_="ipQwMb ekueJc gEATFF RD0gLb") # News Headline
+    images = soup.findAll('img',class_="tvs3Id QwxBBf") #Image links related to News-headline
+    link = soup.findAll('a',class_="VDXfz") # News-Headline deatail link  
+    news_headline_list=[n.text for n in news_headline]
+    image_link=[j['src'] for j in images]
+    headline_link=["https://news.google.com/"+str(j['href']) for j in link]
+    
+    serial=1
+    value=[]
+    for j in range(20):
+        value.append({"serial":serial,"date":now.strftime("%d %b"),"Headline":news_headline_list[j],"image_link":image_link[j],"headline_link":headline_link[j]})
+        serial+=1       
 
-#     return dic
+    with open("google-news"+str(now.strftime(" %d%b"))+".json", 'w') as file:
+        json.dump(value, file)
+    return value
 
 # Views START FROM HERE
+def globalD(request):
+    if request.method == "POST":
+      cc = ContactForm(request.POST)
+      if cc.is_valid():
+          name = cc.cleaned_data['name']
+          mail=cc.cleaned_data['mail']
+          message=cc.cleaned_data['message']
+          cc.save()
+          return redirect('tracks') 
+    else:
+      cc = ContactForm(request.POST)
+    parms={
+        "data1":country(),
+        "data":apiforindia(),
+        "data2":apiforworld(),
+        'f':cc,
+        
+    }
+    return render(request, 'global.html', parms)
+
 
 def Track(request):
     if request.method == "POST":
@@ -72,23 +93,10 @@ def Track(request):
     }
     return render(request, 'main.html', parms)
 
-def globalD(request):
-    if request.method == "POST":
-      cc = ContactForm(request.POST)
-      if cc.is_valid():
-          name = cc.cleaned_data['name']
-          mail=cc.cleaned_data['mail']
-          message=cc.cleaned_data['message']
-          cc.save()
-          return redirect('tracks') 
-    else:
-      cc = ContactForm(request.POST)
+def News(request):
     parms={
-        "data1":country(),
-        "data":apiforindia(),
-        "data2":apiforworld(),
-        'f':cc,
-        
+        "news":news(),
+        "now":now       
     }
-    return render(request, 'global.html', parms)
+    return render(request, 'news.html', parms)
 
