@@ -3,4 +3,9 @@
 	<script src="{% static 'js/jq.js' %}"></script>
 	<script src="{% static 'js/popper.js' %}"></script>
 	<script src="{%static 'js/boot.js'%}"></script>
+	<script type="text/javascript">
+    	$(document).scroll(function(){
+    		$('.navbar').toggleClass('scrolled',$(this). scrollTop() > $('.navbar').height());
+    	});
+    </script>
 <!-- JavaScript Section Ended -->

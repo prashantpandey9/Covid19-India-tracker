@@ -1,16 +1,12 @@
 {%extends 'base.html'%}
 {% load static %}
 {% block content%}
-<div class="container-fluid">
+<div class="container-fluid" style="margin-top:100px;" id="nation">
     <div class="row">
-        <div class="col-sm-2">
-            {% include 'nav.html' %}
-        </div>
-
-        <div class="col-sm-10">
+       <div class="col-sm-12">
             <div class="col-sm-12 box">
                 <div class="row">
-                    <div class="col-sm-12 " style="border-right: 1px solid grey;">
+                    <div class="col-sm-12">
                         <div class="col-sm-12" id="india">🇮🇳 India</div>
                         <div class="row data">
                             {% for dt in data.statewise %}
