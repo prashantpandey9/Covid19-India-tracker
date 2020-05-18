@@ -1,5 +1,5 @@
 # Covid19-India-&-World-Tracker
-##### This app is developed to aware people about the global pandemic CORONA-19(COVID-19) cases all around the world. This app mainly focus on the cases across all over the India.The data is crowdsourced from the various API's  in the internet and used in this webapp.
+##### This app is developed to aware people about the global pandemic CORONA-VIRUS(COVID-19) cases all around the world. This app mainly focus on the cases across all over the India.The data is crowdsourced from the various API's  in the internet and used in this webapp.
 
 * [Visit the site](http://covidindiaa.pythonanywhere.com/)
 
