@@ -1,16 +1,22 @@
 # Covid19-India-&-World-Tracker
+	This app is developed to aware people about the global pandemic CORONA-19(COVID-19) cases all around the world. This app mainly focus on the 		cases across all over the India.The data is crowdsourced from the various API's  in the internet and used in this webapp.
+
 * [Visit the site](http://covidindiaa.pythonanywhere.com/)
 
-# Technology Used
+# Development
+
+## Technology Used
  #### * HTML5
  #### * CSS Bootstrap Framework
  #### * Backend-Python(Django)
- #### * Python Libraries (requests,JSON)
+ #### * Python Libraries (requests,JSON,BeautifulSoup)
  
 # Api used
 * [Statewise-data-for-India](https://api.covid19india.org/data.json)
 * [Global-data](https://corona.lmao.ninja/v2/all)
 * [Global-Country-data](https://corona.lmao.ninja/v2/countries#)
+#### Created my own api using the webscraping libraries.I scraped the data from google-news related to corona and collect the latest 20 news headline.
+#### This api only fetch the india related information for corona.
 
 # WEB VIEW
 
