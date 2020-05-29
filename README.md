@@ -1,4 +1,9 @@
 # Covid19-India-&-World-Tracker
+
+![](https://img.shields.io/github/languages/count/)
+![](https://img.shields.io/github/languages/code-size/prashantpandey9/Covid19-India-tracker)
+
+
 ##### This app is developed to aware people about the global pandemic CORONA-VIRUS(COVID-19) cases all around the world. This app mainly focus the cases across all over the India. The data is crowdsourced from the various API's  in the internet and used in this webapp.
 
 * [Visit the site](http://covidindiaa.pythonanywhere.com/)
