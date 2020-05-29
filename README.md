@@ -1,6 +1,6 @@
 # Covid19-India-&-World-Tracker
 
-![](https://img.shields.io/github/languages/count/)
+![](https://img.shields.io/github/languages/count/prashantpandey9/Covid19-India-tracker)
 ![](https://img.shields.io/github/languages/code-size/prashantpandey9/Covid19-India-tracker)
 ![](https://img.shields.io/github/repo-size/prashantpandey9/Covid19-India-tracker)
 ![](https://img.shields.io/github/issues/prashantpandey9/Covid19-India-tracker)
