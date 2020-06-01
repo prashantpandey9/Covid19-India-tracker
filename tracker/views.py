@@ -29,7 +29,15 @@ def country():
 
     data=json.loads(s)
     return data
-    
+
+def district():
+    api="https://api.covid19india.org/state_district_wise.json"
+
+    s=(requests.get(api)).text
+
+    data=json.loads(s)
+    return data
+
 def news():
     url="https://news.google.com/topics/CAAqBwgKMMqAmAsw9KmvAw?hl=en-IN&gl=IN&ceid=IN%3Aen" #google news URL for scraping it.
     q=requests.get(url)
@@ -88,7 +96,7 @@ def Track(request):
     parms={
         "data":apiforindia(),
         "data2":apiforworld(),
-        
+        "dist":district(),
         'f':cc
     }
     return render(request, 'main.html', parms)
