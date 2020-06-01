@@ -20,7 +20,7 @@ body{
     position:relative;
   }
   #table-scroll {
-    height:500px;
+    height:800px;
     overflow:auto;  
     margin-top:20px;
   }
