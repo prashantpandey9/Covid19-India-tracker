@@ -13,7 +13,6 @@ def apiforindia():
     s=(requests.get(api)).text
 
     data=json.loads(s)
-    b=1
     return data
 
 def apiforworld():
