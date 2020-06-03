@@ -30,7 +30,7 @@ def country():
     return data
 
 def district():
-    api="https://api.covid19india.org/state_district_wise.json"
+    api="https://api.covid19india.org/v2/state_district_wise.json"
 
     s=(requests.get(api)).text
 
@@ -107,3 +107,9 @@ def News(request):
     }
     return render(request, 'news.html', parms)
 
+def DistrictWise(request):
+    parms={
+       
+        "data1":district(),
+    }
+    return render(request,'districtwise.html',parms)
