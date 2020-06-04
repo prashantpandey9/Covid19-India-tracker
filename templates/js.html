@@ -3,5 +3,15 @@
 	<script src="{% static 'js/jq.js' %}"></script>
 	<script src="{% static 'js/popper.js' %}"></script>
 	<script src="{%static 'js/boot.js'%}"></script>
-	
+	{% comment %} <script src="{%static 'js/sw.js'%}"></script>
+	<script type="text/javascript">
+		var pwa = { "url": "\/sw.js" };
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', function () {
+			navigator.serviceWorker.register(pwa.url)
+				.then(function (registration) { console.log('PWA service worker ready'); registration.update(); })
+				.catch(function (error) { console.log('Registration failed with ' + error); });
+			});
+		}
+</script> {% endcomment %}
 <!-- JavaScript Section Ended -->

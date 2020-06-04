@@ -1,0 +1,38 @@
+{
+    "short_name": "Covid19",
+    "name": "Covid case tracker",
+    "description": "Weather forecast information",
+    "icons": [
+      {
+        "src": "../media/images/coro.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "../media/images/coro.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#fff",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#3367D6",
+    "shortcuts": [
+      {
+        "name": "How's weather today?",
+        "short_name": "Today",
+        "description": "View weather information for today",
+        "url": "/nation",
+        "icons": [{ "src": "../media/images/coro.png", "sizes": "192x192" }]
+      },
+      {
+        "name": "How's weather tomorrow?",
+        "short_name": "Tomorrow",
+        "description": "View weather information for tomorrow",
+        "url": "/district-wise",
+        "icons": [{ "src": "../media/images/coro.png", "sizes": "192x192" }]
+      }
+    ]
+  }
