@@ -109,7 +109,11 @@ def News(request):
 
 def DistrictWise(request):
     parms={
+<<<<<<< HEAD
 
+=======
+       
+>>>>>>> fbdf0c644779b07b79aca18e53cc62452d3ee517
         "data1":district(),
     }
     return render(request,'districtwise.html',parms)

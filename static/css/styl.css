@@ -20,8 +20,13 @@ body{
     position:relative;
   }
   #table-scroll {
+<<<<<<< HEAD
     height:570px;
     overflow:auto;
+=======
+    height:800px;
+    overflow:auto;  
+>>>>>>> fbdf0c644779b07b79aca18e53cc62452d3ee517
     margin-top:20px;
   }
   #table-wrapper table {
