@@ -13,6 +13,7 @@
     <meta name="description" content="A volunteer-driven crowdsourced effort to track the coronavirus in India and Globally. A detailed case count shows the extent of the coronavirus outbreak, with tables of the number of cases by state and country">
     <!-- Favicon icon -->
     <link href="{%static 'media/images/coro.jpg'%}" rel="shortcut icon">
+    <link rel="manifest" href="https://raw.githubusercontent.com/prashantpandey9/Covid19-India-tracker/master/manifest.json">
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://covidindiaa.pythonanywhere.com/">
     <meta property="og:title" content="Coronavirus in India and Global: Latest Case Count">
@@ -27,7 +28,15 @@
     <meta property="twitter:description" content="A volunteer-driven crowdsourced effort to track the coronavirus in India and Globally. A detailed case count shows the extent of the coronavirus outbreak, with tables of the number of cases by state and country">
     <meta property="twitter:image" content="https://raw.githubusercontent.com/prashantpandey9/Covid19-India-tracker/master/static/media/images/coro.jpg">
     {%include 'css.html'%}
-    
+    <!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165393109-1"></script>-->
+    <!--<script>-->
+    <!--  window.dataLayer = window.dataLayer || [];-->
+    <!--  function gtag(){dataLayer.push(arguments);}-->
+    <!--  gtag('js', new Date());-->
+
+    <!--  gtag('config', 'UA-165393109-1');-->
+    <!--</script>-->
+
   </head>
   <body style="background-color: #000;"   >
 
@@ -36,12 +45,12 @@
   {% block content %}
 
   {% endblock content %}
- 
+
   {% include 'contact.html' %}
-	
+
   {%include 'footer.html'%}
 
 	{%include 'js.html'%}
-  
+
   </body>
 </html>

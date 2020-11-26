@@ -1,0 +1,86 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block content%}
+<style>
+    #table-scroll {
+    height:400px;
+    overflow:auto;
+    margin-top:20px;
+  }
+  #table-scroll1{
+    height:800px;
+    overflow:auto;
+    margin-top:20px;
+  }
+</style>
+<div class="container-fluid" style="margin-top:100px;" id="nation">
+    <div class="row">
+       <div class="col-sm-9">
+
+            <h1 style="background:#fff;margin-bottom:0;font-weight:bold;"> <center>District-Wise Data For India </center></h1>
+            <div id="table-wrapper">
+                <div id="table-scroll1">
+                    <table class="table table-hover table-primary" id="india">
+
+                        <tr>
+                            <table class="table table-hover table-primary" id="india">
+
+                            <tr>
+
+                                <td>
+                                {% for dt in data1 %}
+                                <hr>
+                                <center><h5>{{dt.state}}</h5></center>
+                                <hr>
+                                <div id="table-wrapper">
+                                    <div id="table-scroll">
+                                        <table class="table table-hover table-primary" id="india">
+                                            <thead>
+                                            <tr style="text-align:center">
+                                                <th scope="col">District</th>
+
+                                                <th scope="col" class="b-green t-green"> Total Confirmed</th>
+                                                <th scope="col" class="activ">Active Cases</th>
+                                                <th scope="col" class="activ"> Total Recovered</th>
+                                                <th scope="col" class="b-red t-red"> Total Deaths </th>
+
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+
+                                            {% for dt in dt.districtData %}
+                                            <tr style="text-align:center">
+
+                                                <td> {{dt.district}}</td>
+
+                                                <td  class="t-green b-green"> {{dt.confirmed}} <span class='t-red'> [+{{dt.delta.confirmed}}]</span></td>
+                                                <td class='activ'> {{dt.active}}</td>
+
+                                                <td class='activ'> {{dt.recovered}} <span class="t-green">[-{{dt.delta.recovered}}]<span></td>
+
+                                                <td class='t-red b-red'> {{dt.deceased}} <span >[+{{dt.delta.deceased}}]</span></td>
+
+                                            </tr>
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                {% endfor %}</td>
+                                        </tr>
+                                        </table>
+                            </td>
+                        </tr>
+                        </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            {% include 'sidebar.html' %}
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementsByClassName("nav-link")[2].classList.add("active");
+</script>
+{% endblock content%}

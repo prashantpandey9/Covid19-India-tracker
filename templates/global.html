@@ -3,14 +3,14 @@
 {% block content%}
 <div class="container-fluid" style="margin-top:100px;" id="global">
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-9">
             <div class="col-sm-12 box">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="col-sm-12 banner">Global</div>
                         <div class="row data">
                             <div class="col-sm-3 t-red">{{data2.cases}}<span>   [+{{data2.todayCases}}]</span>
-                            <p>Confirmed</p>                           
+                            <p>Confirmed</p>
                             </div>
                             <div class="col-sm-3 t-green">{{data2.recovered}}
                             <p>Recovered</p></div>
@@ -19,9 +19,9 @@
                             <div class="col-sm-3 t-red">{{data2.deaths}}<span>   [+{{data2.todayDeaths}}]</span>
                             <p>Deaths</p></div>
                         </div>
-                       
+
                     </div>
-                    
+
                 </div>
             </div>
             <h1 style="background:#fff;margin-bottom:0;font-weight:bold;"> <center>Country Data</center></h1>
@@ -36,23 +36,23 @@
                             <th scope="col" class="activ">Active Cases</th>
                             <th scope="col" class="activ"> Total Recovered</th>
                             <th scope="col" class="b-red t-red"> Total Deaths </th>
-                            
+
                         </tr>
                         </thead>
                         <tbody>
 
-                        
+
                             {% for dt in data1 %}
                         <tr style="text-align:center">
                             <td><img src="{{dt.countryInfo.flag}}" style='width:50px;'></td>
                             <td> {{dt.country}}</td>
                             <td  class="t-green b-green"> {{dt.cases}} <span class='t-red'> [+{{dt.todayCases}}]</span></td>
                             <td class='activ'> {{dt.active}}</td>
-                            
+
                             <td class='activ'> {{dt.recovered}} </td>
 
                             <td class='t-red b-red'> {{dt.deaths}} <span >[+{{dt.todayDeaths}}]</span></td>
-                        
+
                             <td> {{dt.lastupdatedtime}}</td>
                         </tr>
                         {%endfor%}
@@ -62,9 +62,12 @@
                 </div>
             </div>
         </div>
+        <div class="col-sm-3">
+            {% include 'sidebar.html' %}
+        </div>
     </div>
 </div>
 <script>
     document.getElementsByClassName("nav-link")[0].classList.add("active")
 </script>
-{% endblock%} 
+{% endblock%}

@@ -1,0 +1,38 @@
+{
+  "short_name": "Covid19",
+  "name": "Covid Case Tracker",
+  "description": "Corona Case Counter",
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/prashantpandey9/Covid19-India-tracker/master/static/media/images/coro192X192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/prashantpandey9/Covid19-India-tracker/master/static/media/images/coro512X512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "https://covidindiaa.pythonanywhere.com/",
+  "background_color": "#fff",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#3367D6",
+  "shortcuts": [
+    {
+      "name": "Nation Count",
+      "short_name": "Today",
+      "description": "Case information for today",
+      "url": "https://covidindiaa.pythonanywhere.com/nation",
+      "icons": [{ "src": "https://raw.githubusercontent.com/prashantpandey9/Covid19-India-tracker/master/static/media/images/coro512X512.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "DistrictWise",
+      "short_name": "District",
+      "description": "View cases information for district",
+      "url": "https://covidindiaa.pythonanywhere.com/district-wise",
+      "icons": [{ "src": "https://raw.githubusercontent.com/prashantpandey9/Covid19-India-tracker/master/static/media/images/coro512X512.png", "sizes": "192x192" }]
+    }
+  ]
+}

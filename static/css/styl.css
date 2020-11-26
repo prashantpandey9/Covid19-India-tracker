@@ -20,16 +20,16 @@ body{
     position:relative;
   }
   #table-scroll {
-    height:500px;
-    overflow:auto;  
+    height:570px;
+    overflow:auto;
     margin-top:20px;
   }
   #table-wrapper table {
     width:100%;
-  
+
   }
   #table-wrapper table thead th .text {
-    position:absolute;   
+    position:absolute;
     top:-20px;
     z-index:2;
     height:20px;
@@ -63,17 +63,17 @@ body{
   ::-webkit-scrollbar {
     width: 5px;
   }
-  
+
   /* Track */
   ::-webkit-scrollbar-track {
     background: #e95d5d;
   }
-  
+
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: #888;
   }
-  
+
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
@@ -135,10 +135,12 @@ body{
   background: #000a31 !important;
   transition: 0.5s;
 }
+
 .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
     color: #000;
     background: #fff;
+    padding:20px;
 }
 .navbar-light .navbar-toggler{
   background: rgba(255,255,255,0.6);
@@ -153,10 +155,11 @@ body{
 
 .navbar-light .navbar-nav .nav-link{
   color: rgba(255,255,255,0.8);
+  padding-left: 20px;
 }
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link:focus{
-  color: rgba(203,7,247,1);
+  color: #00FFFF;
 }
 .navbar-light .navbar-brand,
 .navbar-light .navbar-brand:hover,
@@ -165,4 +168,9 @@ body{
   color: rgba(255,255,255,1);
   font-size: 2.5rem;
   font-weight: 600;
+}
+.navbar-nav .nav-link {
+    padding-right: 0;
+    padding-left: 20px;
+
 }
