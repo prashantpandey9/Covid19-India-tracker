@@ -3,38 +3,42 @@
 {% block content%}
 <style>
     #table-scroll {
-<<<<<<< HEAD
     height:400px;
     overflow:auto;
-=======
-    height:200px;
-    overflow:auto;  
->>>>>>> fbdf0c644779b07b79aca18e53cc62452d3ee517
     margin-top:20px;
   }
   #table-scroll1{
     height:800px;
-<<<<<<< HEAD
     overflow:auto;
-=======
-    overflow:auto;  
->>>>>>> fbdf0c644779b07b79aca18e53cc62452d3ee517
     margin-top:20px;
   }
 </style>
 <div class="container-fluid" style="margin-top:100px;" id="nation">
     <div class="row">
-       <div class="col-sm-9">
-<<<<<<< HEAD
+        <div class="col-sm-3" style="background:#fff;height: 1070px;overflow: auto;">
+            <h3 class='text-center pt-2'>News Section</h3>
+            <hr />
+            {% for i in news%}
+            <div class="col-sm-12" style="margin-bottom: 50px;" >
+                <div class="row">
 
-=======
-            
->>>>>>> fbdf0c644779b07b79aca18e53cc62452d3ee517
+                        <div class="col-sm-3">
+                            <img class="img-fluid he" src="{{i.image_link}}" alt="newsimage" width="100px" style="border-radius: 20px 20px 20px 20px;">
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="card-text he">{{i.Headline}}</p>
+                            <p><a href="{{i.headline_link}}" class="btn btn-primary he">More Detail>></a></p>
+                        </div>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-sm-6">
             <h1 style="background:#fff;margin-bottom:0;font-weight:bold;"> <center>District-Wise Data For India </center></h1>
             <div id="table-wrapper">
                 <div id="table-scroll1">
                     <table class="table table-hover table-primary" id="india">
-<<<<<<< HEAD
 
                         <tr>
                             <table class="table table-hover table-primary" id="india">
@@ -45,29 +49,13 @@
                                 {% for dt in data1 %}
                                 <hr>
                                 <center><h5>{{dt.state}}</h5></center>
-=======
-                
-                        <tr>                
-                            <table class="table table-hover table-primary" id="india">
-                        
-                            <tr>
-                            
-                                <td>
-                                {% for dt in data1 %}
-                                <hr> 
-                                <center><h1>{{dt.state}}</h1></center>
->>>>>>> fbdf0c644779b07b79aca18e53cc62452d3ee517
                                 <hr>
                                 <div id="table-wrapper">
                                     <div id="table-scroll">
                                         <table class="table table-hover table-primary" id="india">
                                             <thead>
                                             <tr style="text-align:center">
-<<<<<<< HEAD
                                                 <th scope="col">District</th>
-=======
-                                                <th scope="col">State</th>
->>>>>>> fbdf0c644779b07b79aca18e53cc62452d3ee517
 
                                                 <th scope="col" class="b-green t-green"> Total Confirmed</th>
                                                 <th scope="col" class="activ">Active Cases</th>
@@ -78,15 +66,9 @@
                                             </thead>
                                             <tbody>
 
-<<<<<<< HEAD
                                             {% for dt in dt.districtData %}
                                             <tr style="text-align:center">
 
-=======
-                                            {% for dt in dt.districtData %}   
-                                            <tr style="text-align:center">
-                                            
->>>>>>> fbdf0c644779b07b79aca18e53cc62452d3ee517
                                                 <td> {{dt.district}}</td>
 
                                                 <td  class="t-green b-green"> {{dt.confirmed}} <span class='t-red'> [+{{dt.delta.confirmed}}]</span></td>
@@ -95,11 +77,6 @@
                                                 <td class='activ'> {{dt.recovered}} <span class="t-green">[-{{dt.delta.recovered}}]<span></td>
 
                                                 <td class='t-red b-red'> {{dt.deceased}} <span >[+{{dt.delta.deceased}}]</span></td>
-<<<<<<< HEAD
-
-=======
-                                                
->>>>>>> fbdf0c644779b07b79aca18e53cc62452d3ee517
                                             </tr>
                                             {% endfor %}
                                             </tbody>
@@ -111,7 +88,6 @@
                                         </table>
                             </td>
                         </tr>
-<<<<<<< HEAD
                         </table>
                 </div>
             </div>
@@ -119,15 +95,6 @@
         <div class="col-sm-3">
             {% include 'sidebar.html' %}
         </div>
-=======
-                        </table>    
-                </div>
-            </div>   
-        </div>     
-        <div class="col-sm-3">
-            {% include 'sidebar.html' %}
-        </div>   
->>>>>>> fbdf0c644779b07b79aca18e53cc62452d3ee517
     </div>
 </div>
 <script>

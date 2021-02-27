@@ -3,7 +3,26 @@
 {% block content%}
 <div class="container-fluid" style="margin-top:100px;" id="nation">
     <div class="row">
-       <div class="col-sm-9">
+        <div class="col-sm-3" style="background:#fff;height: 1070px;overflow: auto;">
+            <h3 class='text-center'>News Section</h3>
+            <hr />
+            {% for i in news%}
+            <div class="col-sm-12" style="margin-bottom: 50px;" >
+                <div class="row">
+
+                        <div class="col-sm-3">
+                            <img class="img-fluid he" src="{{i.image_link}}" alt="newsimage" width="100px" style="border-radius: 20px 20px 20px 20px;">
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="card-text he">{{i.Headline}}</p>
+                            <p><a href="{{i.headline_link}}" class="btn btn-primary he">More Detail>></a></p>
+                        </div>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-sm-6">
             <div class="col-sm-12 box">
                 <div class="row">
                     <div class="col-sm-12">
@@ -63,17 +82,10 @@
                     </table>
                 </div>
             </div>
-<<<<<<< HEAD
         </div>
         <div class="col-sm-3">
             {% include 'sidebar.html' %}
         </div>
-=======
-        </div>     
-        <div class="col-sm-3">
-            {% include 'sidebar.html' %}
-        </div>   
->>>>>>> fbdf0c644779b07b79aca18e53cc62452d3ee517
     </div>
 </div>
 <script>

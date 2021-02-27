@@ -2,8 +2,27 @@
 {% load static %}
 {% block content%}
 <div class="container-fluid" style="margin-top:100px;" id="global">
-    <div class="row">
-        <div class="col-sm-9">
+    <div class="row">       
+        <div class="col-sm-3" style="background:#fff;height: 1070px;overflow: auto;">
+            <h3 class='text-center pt-2'>News Section</h3>
+            <hr />
+            {% for i in news%}
+            <div class="col-sm-12" style="margin-bottom: 50px;" >
+                <div class="row">
+
+                        <div class="col-sm-3">
+                            <img class="img-fluid he" src="{{i.image_link}}" alt="newsimage" width="100px" style="border-radius: 20px 20px 20px 20px;">
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="card-text he">{{i.Headline}}</p>
+                            <p><a href="{{i.headline_link}}" class="btn btn-primary he">More Detail>></a></p>
+                        </div>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-sm-6">
             <div class="col-sm-12 box">
                 <div class="row">
                     <div class="col-sm-12">
@@ -19,9 +38,7 @@
                             <div class="col-sm-3 t-red">{{data2.deaths}}<span>   [+{{data2.todayDeaths}}]</span>
                             <p>Deaths</p></div>
                         </div>
-
                     </div>
-
                 </div>
             </div>
             <h1 style="background:#fff;margin-bottom:0;font-weight:bold;"> <center>Country Data</center></h1>
@@ -36,27 +53,23 @@
                             <th scope="col" class="activ">Active Cases</th>
                             <th scope="col" class="activ"> Total Recovered</th>
                             <th scope="col" class="b-red t-red"> Total Deaths </th>
-
                         </tr>
                         </thead>
                         <tbody>
-
-
                             {% for dt in data1 %}
-                        <tr style="text-align:center">
-                            <td><img src="{{dt.countryInfo.flag}}" style='width:50px;'></td>
-                            <td> {{dt.country}}</td>
-                            <td  class="t-green b-green"> {{dt.cases}} <span class='t-red'> [+{{dt.todayCases}}]</span></td>
-                            <td class='activ'> {{dt.active}}</td>
+                            <tr style="text-align:center">
+                                <td><img src="{{dt.countryInfo.flag}}" style='width:50px;'></td>
+                                <td> {{dt.country}}</td>
+                                <td  class="t-green b-green"> {{dt.cases}} <span class='t-red'> [+{{dt.todayCases}}]</span></td>
+                                <td class='activ'> {{dt.active}}</td>
 
-                            <td class='activ'> {{dt.recovered}} </td>
+                                <td class='activ'> {{dt.recovered}} </td>
 
-                            <td class='t-red b-red'> {{dt.deaths}} <span >[+{{dt.todayDeaths}}]</span></td>
+                                <td class='t-red b-red'> {{dt.deaths}} <span >[+{{dt.todayDeaths}}]</span></td>
 
-                            <td> {{dt.lastupdatedtime}}</td>
-                        </tr>
-                        {%endfor%}
-
+                                <td> {{dt.lastupdatedtime}}</td>
+                            </tr>
+                             {%endfor%}
                         </tbody>
                     </table>
                 </div>
